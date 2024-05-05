@@ -8,6 +8,7 @@ import { AboutUs } from "../../widgets/about-us/about-us.tsx";
 import { PhotoGallery } from "../../widgets/photo-gallery/photo-gallery.tsx";
 import { Reviews } from "../../widgets/reviews/reviews.tsx";
 import { Contacts } from "../../widgets/contacts/contacts.tsx";
+import { containerStyles } from "../../shared/styles/container-styles.ts";
 
 const landingCoreStyles = css({
   display: "grid",
@@ -21,22 +22,20 @@ const landingContentStyles = css({
   height: "100%",
   gap: "15px",
   flexDirection: "column",
-  width: "1300px",
-  backgroundColor: "red",
-});
-const containerStyles = css({
-  display: "flex",
-  height: "100%",
-  flexDirection: "column",
-  alignItems: "center",
+  width: "100%",
+  minWidth: "760px",
+  maxWidth: "1300px",
+  "& div": {
+    padding: "50px 0",
+  },
 });
 
 export const Landing = () => {
   return (
     <div className={landingCoreStyles}>
       <Header />
-      <main className={containerStyles}>
-        <section className={landingContentStyles}>
+      <div className={containerStyles}>
+        <main className={landingContentStyles}>
           <MainPageSlider />
           <FastActionsSection />
           <PriceCalculator />
@@ -44,8 +43,8 @@ export const Landing = () => {
           <PhotoGallery />
           <Reviews />
           <Contacts />
-        </section>
-      </main>
+        </main>
+      </div>
       <Footer />
     </div>
   );
