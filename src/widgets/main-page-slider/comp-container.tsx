@@ -26,7 +26,7 @@ export const CompContainer = ({ endPoint, color }: Props) => {
     animation: `${compKeyframes} 9s ease-in-out infinite`,
   });
   return (
-    <div id={"laptop"} className={laptopStyles}>
+    <div id={"comp"} className={laptopStyles}>
       <Comp mainColor={color} />
     </div>
   );

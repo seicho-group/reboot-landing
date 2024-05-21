@@ -57,7 +57,7 @@ export const MainPageSlider = () => {
       </div>
       <PhoneContainer endPoint={[500, 400]} color={"#EEAA45"} />
       <LaptopContainer endPoint={[500, 400]} color={"#5BC0FF"} />
-      <CompContainer endPoint={[500, 400]} color={"green"} />
+      <CompContainer endPoint={[500, 400]} color={"#EEAA45"} />
     </div>
   );
 };
