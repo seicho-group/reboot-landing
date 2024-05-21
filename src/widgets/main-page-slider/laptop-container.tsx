@@ -1,5 +1,5 @@
 import { css, keyframes } from "emotion";
-import { Phone } from "../../shared/assets/phone.tsx";
+import { Laptop } from "../../shared/assets/laptop.tsx";
 
 type Props = {
   endPoint: [number, number];
@@ -27,7 +27,7 @@ export const LaptopContainer = ({ endPoint, color }: Props) => {
   });
   return (
     <div id={"laptop"} className={laptopStyles}>
-      <Phone mainColor={color} />
+      <Laptop mainColor={color} />
     </div>
   );
 };

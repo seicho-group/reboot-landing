@@ -12,7 +12,7 @@ const phoneKeyframes = keyframes`
     } 
   
     10%, 20% { 
-        transform: translate(200px, 100px) rotate(360deg) scale(150%);
+        transform: translate(0px, 50%) rotate(360deg) scale(150%);
     }
 
     30%, to {

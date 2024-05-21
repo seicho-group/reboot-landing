@@ -7,8 +7,28 @@ import { useEffect, useState } from "react";
 const sliderStyles = css({
   height: "700px",
   position: "relative",
-
   overflow: "hidden",
+});
+
+const sliderTextStyles = css({
+  fontWeight: "bolder",
+  top: "300px",
+  color: "white",
+  fontSize: "38px",
+  userSelect: "none",
+});
+
+const sliderTextWrapperStyles = css({
+  position: "absolute",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: "50px",
+  top: "300px",
+  backgroundColor: "#35A9F2",
+  fontSize: "38px",
+  height: "90px",
+  width: "400px",
 });
 
 export const MainPageSlider = () => {
@@ -32,20 +52,12 @@ export const MainPageSlider = () => {
   }, [currentType]);
   return (
     <div className={sliderStyles}>
-      <p
-        style={{
-          fontWeight: "500",
-          position: "absolute",
-          top: "300px",
-          color: "#35A9F2",
-          fontSize: "38px",
-        }}
-      >
-        {currentType}
-      </p>
-      <PhoneContainer endPoint={[300, 400]} color={"#EEAA45"} />
-      <LaptopContainer endPoint={[200, 400]} color={"blue"} />
-      <CompContainer endPoint={[200, 400]} color={"green"} />
+      <div className={sliderTextWrapperStyles}>
+        <p className={sliderTextStyles}>{currentType}</p>
+      </div>
+      <PhoneContainer endPoint={[500, 400]} color={"#EEAA45"} />
+      <LaptopContainer endPoint={[500, 400]} color={"#5BC0FF"} />
+      <CompContainer endPoint={[500, 400]} color={"green"} />
     </div>
   );
 };

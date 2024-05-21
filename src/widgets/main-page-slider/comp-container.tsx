@@ -1,5 +1,5 @@
 import { css, keyframes } from "emotion";
-import { Phone } from "../../shared/assets/phone.tsx";
+import { Comp } from "../../shared/assets/comp.tsx";
 
 type Props = {
   endPoint: [number, number];
@@ -8,15 +8,15 @@ type Props = {
 
 const compKeyframes = keyframes`
     from, 65% {
-        transform: translate(2000px, 0) rotate(0deg) scale(0%);
+        transform: translate(2000px, 0)scale(0%);
     }
     
     70%, 85% {
-        transform: translate(300px, 100px) rotate(360deg) scale(150%);
+        transform: translate(300px, 100px) scale(150%);
     }
 
     95%, to {
-        transform: translate(2000px, 0) rotate(0deg) scale(0%);
+        transform: translate(2000px, 0) scale(0%);
     }`;
 
 export const CompContainer = ({ endPoint, color }: Props) => {
@@ -27,7 +27,7 @@ export const CompContainer = ({ endPoint, color }: Props) => {
   });
   return (
     <div id={"laptop"} className={laptopStyles}>
-      <Phone mainColor={color} />
+      <Comp mainColor={color} />
     </div>
   );
 };
