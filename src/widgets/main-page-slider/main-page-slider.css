@@ -1,0 +1,17 @@
+.createorder__button {
+  color: #ff9d0a;
+  font-size: 20px;
+  height: 45px;
+  width: 250px;
+  border: 2px solid #ff9d0a;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

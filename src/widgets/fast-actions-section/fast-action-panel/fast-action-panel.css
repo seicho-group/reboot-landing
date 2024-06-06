@@ -1,0 +1,9 @@
+.fastaction{
+    height: 100px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 20px 40px auto;
+    color: white;
+    padding: 15px;
+    background-color: #35A9F2;
+}

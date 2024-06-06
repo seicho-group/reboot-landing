@@ -1,0 +1,9 @@
+.header__mobile {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  justify-content: flex-start;
+
+  width: 100%;
+}

@@ -5,7 +5,7 @@ import { Footer } from "../../widgets/footer/footer.tsx";
 import { FastActionsSection } from "../../widgets/fast-actions-section/fast-actions-section.tsx";
 import { PriceCalculator } from "../../widgets/price-calculator/price-calculator.tsx";
 import { AboutUs } from "../../widgets/about-us/about-us.tsx";
-import { PhotoGallery } from "../../widgets/photo-gallery/photo-gallery.tsx";
+// import { PhotoGallery } from "../../widgets/photo-gallery/photo-gallery.tsx";
 import { Reviews } from "../../widgets/reviews/reviews.tsx";
 import { Contacts } from "../../widgets/contacts/contacts.tsx";
 import { containerStyles } from "../../shared/styles/container-styles.ts";
@@ -23,11 +23,9 @@ const landingContentStyles = css({
   gap: "15px",
   flexDirection: "column",
   width: "100%",
-  minWidth: "760px",
+  // minWidth: "760px",
   maxWidth: "1300px",
-  "& div": {
-    padding: "50px 0",
-  },
+  "& div": {},
 });
 
 export const Landing = () => {
@@ -40,7 +38,7 @@ export const Landing = () => {
           <FastActionsSection />
           <PriceCalculator />
           <AboutUs />
-          <PhotoGallery />
+          {/* <PhotoGallery /> */}
           <Reviews />
           <Contacts />
         </main>

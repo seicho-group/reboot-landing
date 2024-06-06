@@ -1,0 +1,12 @@
+/* .fastactionsection__wrapper{
+ 
+} */
+
+.fastactionsection{
+    margin: 20px;
+}
+
+.fastactionsection__bottom{
+display: flex;
+gap: 15px;
+}

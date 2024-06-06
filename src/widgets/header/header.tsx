@@ -1,15 +1,17 @@
 import { css } from "emotion";
 import { containerStyles } from "../../shared/styles/container-styles.ts";
-
-import LOGO from "../../shared/assets/logo.png";
+// import logomobile from "./../../assests/logo.svg";
+// import LOGO from "../../../assests/logodesk.svg";
+import logo from "./../../assests/logodesktop.svg";
+import "./header.css";
 
 const headerStyles = css({
   display: "flex",
   maxWidth: "1300px",
   width: "100%",
-
+  height: "70px",
+  alignItems: "center",
   justifyContent: "space-between",
-  padding: "20px 0",
 });
 
 const navigationLinksStyles = css({
@@ -26,7 +28,7 @@ export const Header = () => {
   return (
     <div id={"header-container"} className={containerStyles}>
       <header className={headerStyles}>
-        <img src={LOGO} alt={"logo"} />
+        <img src={logo} alt={"logo"} />
         <nav>
           <ul className={navigationLinksStyles}>
             <li>Стоимость</li>
@@ -36,6 +38,9 @@ export const Header = () => {
           </ul>
         </nav>
       </header>
+      {/* <header className="header__mobile">
+        <img src={logomobile} alt="" />
+      </header> */}
     </div>
   );
 };
