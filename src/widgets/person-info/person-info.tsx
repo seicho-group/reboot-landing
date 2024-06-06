@@ -1,6 +1,12 @@
 import "./person-info.css";
-import personmock from "./../../assests/personmock.png";
-export function PersonInfo(props: any) {
+
+type TProps = {
+  name: string;
+  job: string;
+  pic: string;
+};
+
+export function PersonInfo(props: TProps) {
   return (
     <div className="personinfo">
       <img src={props.pic} alt="" />
