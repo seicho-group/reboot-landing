@@ -8,26 +8,35 @@ jobs:
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Login to Docker
-        uses: docker/login-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           push: true
           context: ./
-          tags: seichocorp/reboot:latest
+          tags: ghcr.io/seicho-group/reboot:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
+    permissions:
+      contents: read
+      packages: read
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - name: executing remote ssh commands to deploy
@@ -39,5 +48,5 @@ jobs:
           script: |
             sudo docker stop reboot
             sudo docker rm -f reboot
-            sudo docker pull seichocorp/reboot:latest
-            sudo docker run --name reboot -p 80:80 -d seichocorp/reboot
+            sudo docker pull ghcr.io/seicho-group/reboot:latest
+            sudo docker run --name reboot -p 80:80 -d ghcr.io/seicho-group/reboot:latest
