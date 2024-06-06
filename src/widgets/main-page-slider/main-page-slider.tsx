@@ -12,33 +12,20 @@ const sliderStyles = css({
   overflow: "hidden",
 });
 
-// const sliderTextStyles = css({
-//   fontWeight: "bolder",
-//   top: "300px",
-//   color: "white",
-//   fontSize: "38px",
-//   userSelect: "none",
-// });
-
 const sliderTextStyles = css({
   fontWeight: "bolder",
   top: "300px",
-  color: "#35A9F2",
+  color: "white",
   fontSize: "38px",
   userSelect: "none",
 });
 
-// const sliderTextWrapperStyles = css({
-//   position: "absolute",
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   borderRadius: "50px",
+// const sliderTextStyles = css({
+//   fontWeight: "bolder",
 //   top: "300px",
-//   backgroundColor: "#35A9F2",
+//   color: "#35A9F2",
 //   fontSize: "38px",
-//   height: "90px",
-//   width: "400px",
+//   userSelect: "none",
 // });
 
 const sliderTextWrapperStyles = css({
@@ -48,11 +35,24 @@ const sliderTextWrapperStyles = css({
   alignItems: "center",
   borderRadius: "50px",
   top: "300px",
-  backgroundColor: "white",
+  backgroundColor: "#35A9F2",
   fontSize: "38px",
   height: "90px",
-  width: "200px",
+  width: "400px",
 });
+
+// const sliderTextWrapperStyles = css({
+//   position: "absolute",
+//   display: "flex",
+//   justifyContent: "center",
+//   alignItems: "center",
+//   borderRadius: "50px",
+//   top: "300px",
+//   backgroundColor: "white",
+//   fontSize: "38px",
+//   height: "90px",
+//   width: "200px",
+// });
 
 export const MainPageSlider = () => {
   const [currentType, setCurrentType] = useState("телефона");
@@ -77,15 +77,15 @@ export const MainPageSlider = () => {
     <>
       <div className={sliderStyles}>
         <div className={sliderTextWrapperStyles}>
-          <div style={{ width: "300px" }}>
-            <div>ремонт вашего</div>
+          <div style={{ width: "300px", display: "flex", "gap": "30px", flexDirection: "column", }}>
+            <p>ремонт вашего</p>
             <div className={sliderTextStyles}>{currentType}</div>
             <p>в Перми</p>
           </div>
         </div>
-        <PhoneContainer endPoint={[200, 700]} color={"#EEAA45"} />
-        <LaptopContainer endPoint={[200, 800]} color={"#5BC0FF"} />
-        <CompContainer endPoint={[200, 1000]} color={"#EEAA45"} />
+        <PhoneContainer endPoint={[500, 400]} color={"#EEAA45"} />
+        <LaptopContainer endPoint={[500, 400]} color={"#5BC0FF"} />
+        <CompContainer endPoint={[500, 400]} color={"#EEAA45"} />
       </div>
       <div className="center">
         <Link to={"/createorder"}>

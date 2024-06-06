@@ -5,6 +5,7 @@ import workinghours from "./../../assests/workinghours.svg";
 import { ContentBlockName } from "../content-block/content-block";
 import tg from "./../../assests/tg.svg";
 export const Contacts = () => {
+  // @ts-ignore
   return (
     <div id="contacts">
       <ContentBlockName header={"Контакты"} />
@@ -41,7 +42,7 @@ export const Contacts = () => {
         <img src={tg} alt="" />
       </div>
 
-      {/* <div
+      <div
         style={{
           position: "relative",
           overflow: "hidden",
@@ -85,11 +86,9 @@ export const Contacts = () => {
           src="https://yandex.ru/map-widget/v1/?ll=56.294347%2C58.011661&mode=search&oid=122691520553&ol=biz&z=16.5"
           width="100%"
           height="300"
-          frameborder="1"
-          allowfullscreen="true"
           style={{ position: "relative" }}
         ></iframe>
-      </div> */}
+      </div>
     </div>
   );
 };
